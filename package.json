@@ -1,0 +1,35 @@
+{
+  "name": "LeetCoin",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://aoffic.github.io/lcoin/",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env PORT=10888 SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "deploy": "gh-pages -d build SKIP_PREFLIGHT_CHECK=true",
+    "predeploy": "npm run build SKIP_PREFLIGHT_CHECK=true",
+    "build": "react-scripts build SKIP_PREFLIGHT_CHECK=true"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "gh-pages": "^2.2.0",
+    "react-hot-loader": "^4.9.0",
+    "react-scripts": "^3.1.2",
+    "webpack": "^4.41.0"
+  },
+  "dependencies": {
+    "@vkontakte/icons": "^1.16.2",
+    "@vkontakte/vk-connect": "^1.8.7",
+    "@vkontakte/vkui": "^3.2.0",
+    "babel-eslint": "^10.0.3",
+    "chalk": "^2.4.2",
+    "core-js": "^3.1.4",
+    "mysql": "^2.18.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
