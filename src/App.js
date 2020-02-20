@@ -9,6 +9,7 @@ import Persik from './panels/Persik';
 import About from './panels/About';
 import Rules from './panels/Rules';
 import Shop from './panels/Shop';
+import Obmen from './panels/Obmen';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
@@ -42,6 +43,7 @@ const App = () => {
 			<About id='about' go={go} />
 			<Rules id='rules' go={go} />
 			<Shop id='shop'go={go} />
+			<Obmen id='obmen' go={go} />
 		</View>
 	);
 }

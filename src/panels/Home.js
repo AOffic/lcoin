@@ -44,11 +44,11 @@ const Home = ({ id, go, fetchedUser }) => (
 		{fetchedUser && 
 <Group> 
 <Cell size="l" 
-description="Ваш баланс : [баланс ]" before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}><div style={{display: 'flex'}}>{`${fetchedUser.first_name} ${fetchedUser.last_name}`}<Icon16Verified fill="red" width="16" height="16" style={{marginLeft: "6px"}}/><Icon12FireVerified fill="red" width="16" height="16" style={{marginLeft: "6px"}}/></div></Cell>
+description="Ваш баланс коинов: [баланс LCoin]" before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}><div style={{display: 'flex'}}>{`${fetchedUser.first_name} ${fetchedUser.last_name}`}<Icon16Verified fill="red" width="16" height="16" style={{marginLeft: "6px"}}/><Icon12FireVerified fill="red" width="16" height="16" style={{marginLeft: "6px"}}/></div></Cell>
 </Group>}
 <Group title="AddCoin">
 <Link><Button size="l" mode="tertiary" stretched style={{ marginRight: 8 }} before={
-		<Icon24AddOutline width={28} height={28} />}>  Кликнуть (+[кол-во])</Button></Link>
+		<Icon24AddOutline width={28} height={28} />}>  Кликнуть (+[кол-во за 1 клик])</Button></Link>
 </Group>
 <Group title="Меню" className="font">
 			<FixedLayout vertical="bottom">	

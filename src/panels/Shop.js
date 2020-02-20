@@ -3,7 +3,7 @@ import { platform, IOS } from '@vkontakte/vkui';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
 import PanelHeaderButton from '@vkontakte/vkui/dist/components/PanelHeaderButton/PanelHeaderButton';
-import { Group, Cell, Avatar, Button, Header, Separator } from '@vkontakte/vkui';
+import { Group, Cell, Avatar, Button, Header, Separator, Tabs, TabsItem, HorizontalScroll } from '@vkontakte/vkui';
 
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
@@ -22,7 +22,27 @@ const Shop = props => (
 		>
 			Магазин
 		</PanelHeader>
+		
 		<Group title="Магазин" className="font">
+		
+		
+		<Tabs>
+              <HorizontalScroll>
+                <TabsItem
+                  selected={true}
+                >
+                  Магазин
+                </TabsItem>
+                <TabsItem
+                  onClick={props.go}
+                  selected={false}
+				  data-to="obmen"
+                >
+                  Обмен
+                </TabsItem>
+              </HorizontalScroll>
+            </Tabs>
+			<Separator wide />	
 	<Group header={<Header mode="secondary">Клики</Header>}>
         <Cell
           size="l"
