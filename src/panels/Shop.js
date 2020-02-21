@@ -9,6 +9,21 @@ import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
 
 
+
+//var mysql      = require('mysql');
+//var connection = mysql.createConnection({
+//  host     : 'localhost',
+//  user     : 'me',
+//  password : 'secret',
+//  database : 'my_db'
+//});
+ 
+//connection.connect();
+
+
+ //connection.query("UPDATE posts SET title = :title",  {  title:  "Hello MySQL" } );
+
+
 import './Home.css';
 
 const osName = platform();

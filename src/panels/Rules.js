@@ -10,6 +10,21 @@ import Icon24Back from '@vkontakte/icons/dist/24/back';
 import Icon24UserAdd from '@vkontakte/icons/dist/24/user_add';
 
 
+
+//var mysql      = require('mysql');
+//var connection = mysql.createConnection({
+//  host     : 'localhost',
+//  user     : 'me',
+//  password : 'secret',
+//  database : 'my_db'
+//});
+ 
+//connection.connect();
+
+
+ //connection.query("UPDATE posts SET title = :title",  {  title:  "Hello MySQL" } );
+
+
 import './Home.css';
 
 const osName = platform();

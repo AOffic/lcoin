@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { platform, IOS } from '@vkontakte/vkui';
+import connect from '@vkontakte/vk-connect';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
 import PanelHeaderButton from '@vkontakte/vkui/dist/components/PanelHeaderButton/PanelHeaderButton';
@@ -10,6 +11,7 @@ import Icon24Back from '@vkontakte/icons/dist/24/back';
 import Icon24Error from '@vkontakte/icons/dist/24/error';
 import Icon24Send from '@vkontakte/icons/dist/24/send';
 import Icon24LogoVk from '@vkontakte/icons/dist/24/logo_vk';
+import Icon28Users3Outline from '@vkontakte/icons/dist/28/users_3_outline';
 
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
@@ -21,6 +23,19 @@ import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import { Link } from '@vkontakte/vkui';
 
 
+
+//var mysql      = require('mysql');
+//var connection = mysql.createConnection({
+//  host     : 'localhost',
+//  user     : 'me',
+//  password : 'secret',
+//  database : 'my_db'
+//});
+ 
+//connection.connect();
+
+
+ //connection.query("UPDATE posts SET title = :title",  {  title:  "Hello MySQL" } );
 
 
 import './Home.css';
@@ -47,20 +62,24 @@ const About = props => (
           size="l"
           description="Разработчик"
           before={<Avatar src="https://sun9-62.userapi.com/c857620/v857620349/17915e/nFnq1XPlHw0.jpg"/>}
-          bottomContent={<Link href="https://vk.com/id230558063" target="_blank"><Button before={<Icon24Send width={20} height={20}/>}> Написать</Button></Link>}
+          bottomContent={<Link href="https://vk.me/id230558063" target="_blank"><Button before={<Icon24Send width={20} height={20}/>}> Написать</Button></Link>}
         >
           Евгений Котляров
         </Cell>
 		
 		<Separator wide />	
-		<Cell
-          size="l"
-          description="Наша группа"
-          before={<Avatar src="https://sun9-64.userapi.com/c854020/v854020600/1dc926/uxA4oEDESSE.jpg?ava=1"/>}
-          bottomContent={<Link href="https://vk.com/leetproject" target="_blank"><Button before={<Icon24LogoVk width={20} height={20}/>}> Перейти</Button></Link>}
-        >
-          LeetProject 2.0
-        </Cell>
+		<Cell 
+				size="l" 
+				description="Наша группа" 
+				before={<Avatar src="https://sun9-64.userapi.com/c854020/v854020600/1dc926/uxA4oEDESSE.jpg?ava=1"/>} 
+				bottomContent={ 
+					<div style={{ display: 'flex' }}> 
+					<Link target="_blank" href="https://vk.com/club178068475"><Button before={<Icon24LogoVk width={20} height={20} />}>Посетить</Button></Link>
+					<Button style={{ marginLeft: 8 }} before={<Icon28Users3Outline width={20} height={20} />} onClick={() => {connect.send("VKWebAppJoinGroup", {"group_id": 178068475})}}>Подписаться</Button> 
+					</div> 
+					} >
+			LeetProject 2.0 
+		</Cell>
       </Group>
 <Separator wide />	
 <Div className="font" style={{ paddingTop: 25, paddingBottom: 25, color: 'gray' }}>
@@ -74,6 +93,14 @@ const About = props => (
 <Div className="font" style={{ paddingTop: 25, paddingBottom: 25, color: 'gray' }}>
 Версии<br/><br/>
 <Separator wide /><br/>
+<Div className="vers">b0.2.7 <div className="verdate">(21.02.2020)</div><br/>
+- Вместо кнопки "Настройки" сделали кнопку "Истории"
+- Сделали так, чтобы при нажатие на кнопку "Истории" Вас перекидывало на создание истории с рекламой нашего сервиса
+- Сделали кнопку в "О сервисе" - "Подписаться". Она будет предлагать Вам подписку на нашу группу<br/><br/>
+
+На данный момент ВСЕ нерабочее, так как мы только начали понимать сам код и мы сейчас работаем над самим шаблоном сервиса.<br/><br/>
+</Div>
+<Separator wide /><br/>
 <Div className="vers">b0.2.6 <div className="verdate">(20.02.2020)</div><br/>
 - Наконец-то пофиксили отображение галочки и огонька<br/>
 - Теперь пишим версию в самом низу вкладки "О сервисе" (Вы тут сейчас и находитесь)<br/>
@@ -81,7 +108,8 @@ const About = props => (
 - В верхнем меню (во вкладке Магазин) добавили "Обмен". Добавили уже один из обменов<br/>
 - Немного сделали правила<br/>
 - В правилах добавили кнопку на вступление в будущую беседу приложения<br/>
-- В ПК версии уменьшили размер приложения<br/><br/>
+- В ПК версии уменьшили размер приложения<br/>
+- Поставили кнопку "Настройки" в главном меню<br/><br/>
 
 На данный момент ВСЕ нерабочее, так как мы только начали понимать сам код и мы сейчас работаем над самим шаблоном сервиса.<br/><br/>
 </Div>
@@ -118,8 +146,6 @@ const About = props => (
 </Div>
 <Separator wide /><br/>
 <center className="vers">beta 0.2.6</center><br/>
-
-
 
 	</Panel>
 );

@@ -1,5 +1,7 @@
 import React from 'react';
+import connect from '@vkontakte/vk-connect';
 import PropTypes from 'prop-types';
+import { platform, IOS } from '@vkontakte/vkui';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
@@ -14,11 +16,13 @@ import Icon24AddOutline from '@vkontakte/icons/dist/24/add_outline';
 import Icon24Market from '@vkontakte/icons/dist/24/market';
 import Icon16Verified from '@vkontakte/icons/dist/16/verified';
 import Icon12FireVerified from '@vkontakte/icons/dist/12/fire_verified';
+import Icon28Story from '@vkontakte/icons/dist/28/story';
+import Icon24Story from '@vkontakte/icons/dist/24/story';
 
 import FixedLayout from '@vkontakte/vkui/dist/components/FixedLayout/FixedLayout';
 import Separator from '@vkontakte/vkui/dist/components/Separator/Separator';
 import Link from '@vkontakte/vkui/dist/components/Link/Link';
-
+import PanelHeaderButton from '@vkontakte/vkui/dist/components/PanelHeaderButton/PanelHeaderButton';
 
 
 
@@ -37,14 +41,21 @@ import './Home.css';
 
 
  //connection.query("UPDATE posts SET title = :title",  {  title:  "Hello MySQL" } );
+const osName = platform();
 
 const Home = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
-		<PanelHeader>LeetCoin</PanelHeader>
+		<PanelHeader className="font"
+			left={<PanelHeaderButton onClick={() => {connect.send("VKWebAppShowStoryBox", { "background_type" : "image", "url" : "https://sun9-65.userapi.com/c850136/v850136098/1b77eb/0YK6suXkY24.jpg", "attachment": {"text" : "game", "type" : "url", "url" : "https://vk.com/app7306875"}})}} data-to="setting" style={{paddingLeft: 10}}>
+				{osName === IOS ? <Icon28Story/> : <Icon24Story/>}
+			</PanelHeaderButton>}
+		>
+			LeetCoin
+		</PanelHeader>
 		{fetchedUser && 
 <Group> 
 <Cell size="l" 
-description="Ваш баланс коинов: [баланс LCoin]" before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}><div style={{display: 'flex'}}>{`${fetchedUser.first_name} ${fetchedUser.last_name}`}<Icon16Verified fill="red" width="16" height="16" style={{marginLeft: "6px"}}/><Icon12FireVerified fill="red" width="16" height="16" style={{marginLeft: "6px"}}/></div></Cell>
+description="Ваш баланс коинов: [баланс]" before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}><div style={{display: 'flex'}}>{`${fetchedUser.first_name} ${fetchedUser.last_name} ${id}`} <Icon16Verified fill="red" width="16" height="16" style={{marginLeft: "6px"}}/><Icon12FireVerified fill="red" width="16" height="16" style={{marginLeft: "6px"}}/></div></Cell>
 </Group>}
 <Group title="AddCoin">
 <Link><Button size="l" mode="tertiary" stretched style={{ marginRight: 8 }} before={
@@ -61,6 +72,7 @@ description="Ваш баланс коинов: [баланс LCoin]" before={fet
      </Div>
 			</FixedLayout>
 </Group>
+
 	</Panel>
 );
 

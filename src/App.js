@@ -10,12 +10,16 @@ import About from './panels/About';
 import Rules from './panels/Rules';
 import Shop from './panels/Shop';
 import Obmen from './panels/Obmen';
+import Setting from './panels/Setting';
+
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
+
+	
 	useEffect(() => {
 		connect.subscribe(({ detail: { type, data }}) => {
 			if (type === 'VKWebAppUpdateConfig') {
@@ -35,7 +39,9 @@ const App = () => {
 	const go = e => {
 		setActivePanel(e.currentTarget.dataset.to);
 	};
-
+	
+	
+	
 	return (
 		<View activePanel={activePanel} popout={popout}>
 			<Home id='home' fetchedUser={fetchedUser} go={go} />
@@ -44,8 +50,10 @@ const App = () => {
 			<Rules id='rules' go={go} />
 			<Shop id='shop'go={go} />
 			<Obmen id='obmen' go={go} />
+			<Setting id='setting' go={go}/>
 		</View>
 	);
+	
 }
 
 export default App;

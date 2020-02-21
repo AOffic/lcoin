@@ -10,6 +10,22 @@ import Icon24Back from '@vkontakte/icons/dist/24/back';
 
 import { Group, Tabs, HorizontalScroll, TabsItem, Header, Cell, Avatar, Separator } from '@vkontakte/vkui';
 
+
+
+//var mysql      = require('mysql');
+//var connection = mysql.createConnection({
+//  host     : 'localhost',
+//  user     : 'me',
+//  password : 'secret',
+//  database : 'my_db'
+//});
+ 
+//connection.connect();
+
+
+ //connection.query("UPDATE posts SET title = :title",  {  title:  "Hello MySQL" } );
+
+
 const osName = platform();
 
 const Obmen = props => (
