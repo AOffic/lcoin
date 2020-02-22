@@ -29,7 +29,7 @@ const Donate = props => (
         <Div className="font" style={{ paddingTop: 25, paddingBottom: 5, color: 'gray' }}>
         Привет!<br/>
         Все мы знаем, что разработчик хочет что-то получать от создания своего проекта или своей работы.<br/>
-        Надеюсь наш сервис, наш коин, наша валюта Вам понравилась. Мы никого не принуждаем, но подкиньте копеечку нам. <br/>
+        Надеюсь наш сервис, наш коин, наша валюта Вам понравилась. Мы никого не принуждаем, но подкиньте копеечку нам.<br/>
         От вашей активности зависят новые обновления!<br/><br/>
         <Button style={{ marginLeft: 8 }} before={<Icon24MoneyTransfer width={20} height={20} />} onClick={() => {connect.send("VKWebAppOpenPayForm", {"app_id": 7306875, "action": "transfer-to-user", "params": {"user_id" : 230558063, "description" : "Пожертвование проекту LeetCoin."}})}}>Пожертвовать через VK Pay</Button> <br/><br/>
         <Link target="_blank" href="https://qiwi.me/leetcoin"><Button style={{ marginLeft: 8 }} before={<Icon24MoneyCircle width={20} height={20} />}>Пожертвовать через QIWI/Карту</Button></Link>
