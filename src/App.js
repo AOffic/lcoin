@@ -41,8 +41,6 @@ const App = () => {
 		setActivePanel(e.currentTarget.dataset.to);
 	};
 	
-	const dfdf =e => {
-	};
 	
 	
 	return (
