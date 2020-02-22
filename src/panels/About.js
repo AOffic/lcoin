@@ -93,7 +93,7 @@ const About = props => (
 <Div className="font" style={{ paddingTop: 25, paddingBottom: 25, color: 'gray' }}>
 Версии<br/><br/>
 <Separator wide /><br/>
-<Div className="vers">b0.2.8 <div className="verdate">(когда-то...)</div><br/>
+<Div className="vers">ab0.2.8 <div className="verdate">(alfa 0.2.8)</div><br/>
 - Сделали нормальный фон для историй<br/>
 - Добавили пасхалку<br/><br/>
 
