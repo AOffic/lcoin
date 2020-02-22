@@ -71,7 +71,7 @@ description="Ваш баланс коинов: [баланс]" before={fetchedUs
 		<Button size="l" mode="tertiary" stretched onClick={go} data-to="shop" before={
 <Icon24Market />}>Магазин</Button>
 	   <Button size="l" mode="tertiary" stretched style={{ marginRight: 8 }} onClick={go} data-to="about" before={
-		<Icon24Info />}>  О сервисе</Button>
+		<Icon24Info />}> О сервисе</Button>
      </Div>
 			</FixedLayout>
 </Group>
