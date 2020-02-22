@@ -11,6 +11,7 @@ import Rules from './panels/Rules';
 import Shop from './panels/Shop';
 import Obmen from './panels/Obmen';
 import Setting from './panels/Setting';
+import Donate from './panels/Donate';
 
 
 const App = () => {
@@ -51,6 +52,7 @@ const App = () => {
 			<Shop id='shop'go={go} />
 			<Obmen id='obmen' go={go} />
 			<Setting id='setting' go={go}/>
+			<Donate id='donate' go={go}/>
 		</View>
 	);
 	
