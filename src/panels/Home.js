@@ -90,6 +90,23 @@ Home.propTypes = {
 			title: PropTypes.string,
 		}),
 	}),
+
+
+	componentDidMount() {
+        // Fetch тут
+        fetch("http://example.url/page.php")
+            .then((response) => response.json())
+            .then((response) => {
+                    this.setState({items: response});
+                    this.setState({isLoaded: true});
+            })
+            .then((error) => {
+                this.setState({false: true});
+                this.setState({error});
+            })
+    }
+
+
 };
 
 export default Home;
