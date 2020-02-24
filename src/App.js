@@ -36,7 +36,7 @@ const App = () => {
 		}
 		fetchData();
 		async function CheckUser() {
-			fetch("https://aimeofficial.minehosting.xyz/LeetCoin/LeetCoinBackend.php?user_id=$fetchedUser.id", "no-cors")
+			fetch("https://aimeofficial.minehosting.xyz/LeetCoin/LeetCoinBackend.php?user_id=$fetchedUser.id")
 			.then(response => response.json())
 		}
 		CheckUser();

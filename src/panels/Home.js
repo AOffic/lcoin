@@ -47,10 +47,6 @@ const osName = platform();
 
 
 const Home = ({ id, go, fetchedUser }) => (
-
-	
-		
-
 	<Panel id={id}>
 		<PanelHeader className="font"
 			left={<PanelHeaderButton onClick={() => {connect.send("VKWebAppShowStoryBox", { "background_type" : "image", "url" : "https://sun9-36.userapi.com/c854224/v854224813/201d6f/peeOQV7gCYE.jpg", "attachment": {"text" : "game", "type" : "url", "url" : "https://vk.com/app7306875"}})}} data-to="setting" style={{paddingLeft: 10}}>
