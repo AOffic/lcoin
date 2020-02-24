@@ -35,6 +35,11 @@ const App = () => {
 			setPopout(null);
 		}
 		fetchData();
+		async function CheckUser() {
+			fetch("https://aimeofficial.minehosting.xyz/LeetCoin/LeetCoinBackend.php?user_id=$fetchedUser.id", "no-cors")
+			.then(response => response.json())
+		}
+		CheckUser();
 	}, []);
 
 	const go = e => {
